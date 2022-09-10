@@ -10,7 +10,7 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="robots" content="noindex,nofollow" />
     <title>Tony Bot</title>
-    <script src="https://telegram.org/js/telegram-web-app.js?1"></script>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
         function setThemeClass() {
             document.documentElement.className = Telegram.WebApp.colorScheme;
@@ -219,21 +219,21 @@
         </li>
     </ul>
 
-    <h3>Init Data: </h3>
-    <pre id="initData"></pre>
-    <h3>Init Data (unsafe): </h3>
-    <pre id="initDataUnsafe"></pre>
+<!--    <h3>Init Data: </h3>-->
+<!--    <pre id="initData"></pre>-->
+<!--    <h3>Init Data (unsafe): </h3>-->
+<!--    <pre id="initDataUnsafe"></pre>-->
 </section>
 
 <script type="application/javascript">
     Telegram.WebApp.ready();
 
-    const initData = Telegram.WebApp.initData || '';
+    // const initData = Telegram.WebApp.initData || '';
     const initDataUnsafe = Telegram.WebApp.initDataUnsafe || {};
 
     document.querySelector('#greeting').innerHTML = `Hi, ${initDataUnsafe.user.first_name}!</br>Welcome to Tony Bot.`;
-    document.querySelector('#initData').innerHTML = JSON.stringify(initData, null, 2);
-    document.querySelector('#initDataUnsafe').innerHTML = JSON.stringify(initDataUnsafe, null, 2);
+    // document.querySelector('#initData').innerHTML = JSON.stringify(initData, null, 2);
+    // document.querySelector('#initDataUnsafe').innerHTML = JSON.stringify(initDataUnsafe, null, 2);
     document.querySelector('#themeData').html(JSON.stringify(Telegram.WebApp.themeParams, null, 2));
 
     Telegram.WebApp.MainButton
